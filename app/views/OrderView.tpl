@@ -1,21 +1,16 @@
 {extends file="main.tpl"}
 
 {block name=top}
-        <div class="pure-g">
-	<div class="pure-u-1-5"></div>
-	<div class="pure-u-3-5">
-        <table cellpadding="5">
+         
+        <form method="post" class="pure-form pure-form-aligned bottom-margin">
+	<fieldset>
         {foreach $lista as $wiersz}
-        <tr>
-          <td>
-              <label for="aligned-foo">{$wiersz['name']}</label>
-              <input class="item" type="number" min="0" max="9" value="0" name="{$wiersz['id']}" required/>
-          </td>
-        </tr>
+        <div class="pure-control-group" >
+                <label for="aligned-foo">{$wiersz['name']}</label>
+                <input class="item" type="number" min="0" max="9" value="0" name="{$wiersz['id']}" required/>
+	</div>
         {/foreach}
-        </table>
+	</fieldset>
         <a href="{$conf->action_root}ordered" type="submit" class="pure-menu-heading pure-menu-link">Potwierdź zamówienie</a>
-        </div>
-	<div class="pure-u-1-5"></div>
-        </div>
+</form>	
 {/block}
