@@ -19,8 +19,12 @@
 {else}	
 	<a href="{$conf->action_root}login" class="pure-menu-heading pure-menu-link">Zaloguj</a>
 {/if}
+        <a href="{$conf->action_root}personList" class="pure-menu-heading pure-menu-link">Lista Uzytkownikow</a>
 </div>
 
+        
+{block name=top} {/block}
+        
 {block name=messages}
 
 {if $msgs->isMessage()}
@@ -37,7 +41,7 @@
 
 {/block}
 
-{block name=top} {/block}
+
 
 
 

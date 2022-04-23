@@ -1,16 +1,28 @@
 {extends file="main.tpl"}
 
 {block name=top}
-         
-        <form method="post" class="pure-form pure-form-aligned bottom-margin">
-	<fieldset>
-        {foreach $lista as $wiersz}
-        <div class="pure-control-group" >
-                <label for="aligned-foo">{$wiersz['name']}</label>
-                <input class="item" type="number" min="0" max="9" value="0" name="{$wiersz['id']}" required/>
-	</div>
-        {/foreach}
-	</fieldset>
-        <a href="{$conf->action_root}ordered" type="submit" class="pure-menu-heading pure-menu-link">Potwierdź zamówienie</a>
-</form>	
+
+<table id="tab_people" class="pure-table pure-table-bordered">
+<thead>
+	<tr>
+		<th>Nazwa Pizzy</th>
+		<th>Ilość</th>
+	</tr>
+</thead>
+<tbody>
+{foreach $lista as $wiersz}
+{strip}
+	<tr>
+		<td>{$wiersz["name"]}</td>
+		<td>
+			<input class="item" type="number" min="0" max="9" value="0" name="{$wiersz['id']}" required/>
+		</td>
+	</tr>
+{/strip}
+{/foreach}
+</tbody>
+</table>
+<a href="{$conf->action_root}ordered" type="submit" class="pure-menu-heading pure-menu-link">Potwierdź zamówienie</a>
+        
+        
 {/block}

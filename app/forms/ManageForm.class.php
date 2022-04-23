@@ -7,5 +7,5 @@ class ManageForm {
 	public $count;
         public $pizza_id;
         public $user_id;
-        public $action;
+
 }
